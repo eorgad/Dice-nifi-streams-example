@@ -1,0 +1,1065 @@
+<?xml version="1.0" ?>
+<template encoding-version="1.0">
+  <description>Two threads with Dice data handled on separate flows</description>
+  <groupId>b0ef63d0-0158-1000-cfdb-f41e26f80ffa</groupId>
+  <name>Multi-stream-dice-example</name>
+  <snippet>
+    <connections>
+      <id>0159102e-a86d-199f-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+      <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+      <destination>
+        <groupId>b0ef63d0-0158-1000-0000-000000000000</groupId>
+        <id>0159102d-a86d-199f-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </destination>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+      <labelIndex>1</labelIndex>
+      <name></name>
+      <selectedRelationships>success</selectedRelationships>
+      <source>
+        <groupId>b0ef63d0-0158-1000-0000-000000000000</groupId>
+        <id>0159102a-a86d-199f-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </source>
+      <zIndex>0</zIndex>
+    </connections>
+    <connections>
+      <id>0159102f-a86d-199f-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+      <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+      <destination>
+        <groupId>b0ef63d0-0158-1000-0000-000000000000</groupId>
+        <id>0159102b-a86d-199f-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </destination>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+      <labelIndex>1</labelIndex>
+      <name></name>
+      <selectedRelationships>five_record</selectedRelationships>
+      <selectedRelationships>advanced_fraud</selectedRelationships>
+      <selectedRelationships>unmatched</selectedRelationships>
+      <source>
+        <groupId>b0ef63d0-0158-1000-0000-000000000000</groupId>
+        <id>0159102d-a86d-199f-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </source>
+      <zIndex>0</zIndex>
+    </connections>
+    <connections>
+      <id>01591030-a86d-199f-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+      <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+      <destination>
+        <groupId>b0ef63d0-0158-1000-0000-000000000000</groupId>
+        <id>0159102c-a86d-199f-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </destination>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+      <labelIndex>1</labelIndex>
+      <name></name>
+      <selectedRelationships>output stream</selectedRelationships>
+      <source>
+        <groupId>b0ef63d0-0158-1000-0000-000000000000</groupId>
+        <id>0159102b-a86d-199f-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </source>
+      <zIndex>0</zIndex>
+    </connections>
+    <connections>
+      <id>09a1718c-0159-1000-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+      <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+      <destination>
+        <groupId>b0ef63d0-0158-1000-0000-000000000000</groupId>
+        <id>099fa86d-0159-1000-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </destination>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+      <labelIndex>1</labelIndex>
+      <name></name>
+      <selectedRelationships>success</selectedRelationships>
+      <source>
+        <groupId>b0ef63d0-0158-1000-0000-000000000000</groupId>
+        <id>099fa86a-0159-1000-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </source>
+      <zIndex>0</zIndex>
+    </connections>
+    <connections>
+      <id>09a1d0eb-0159-1000-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+      <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+      <destination>
+        <groupId>b0ef63d0-0158-1000-0000-000000000000</groupId>
+        <id>099fa86b-0159-1000-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </destination>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+      <labelIndex>1</labelIndex>
+      <name></name>
+      <selectedRelationships>five_record</selectedRelationships>
+      <selectedRelationships>advanced_fraud</selectedRelationships>
+      <source>
+        <groupId>b0ef63d0-0158-1000-0000-000000000000</groupId>
+        <id>099fa86d-0159-1000-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </source>
+      <zIndex>0</zIndex>
+    </connections>
+    <connections>
+      <id>09a1f482-0159-1000-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+      <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+      <destination>
+        <groupId>b0ef63d0-0158-1000-0000-000000000000</groupId>
+        <id>099fa86c-0159-1000-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </destination>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+      <labelIndex>1</labelIndex>
+      <name></name>
+      <selectedRelationships>output stream</selectedRelationships>
+      <source>
+        <groupId>b0ef63d0-0158-1000-0000-000000000000</groupId>
+        <id>099fa86b-0159-1000-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </source>
+      <zIndex>0</zIndex>
+    </connections>
+    <connections>
+      <id>6b8b1101-0159-1000-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+      <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+      <destination>
+        <groupId>b0ef63d0-0158-1000-0000-000000000000</groupId>
+        <id>6b8aecd9-0159-1000-0000-000000000000</id>
+        <type>OUTPUT_PORT</type>
+      </destination>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+      <labelIndex>1</labelIndex>
+      <name></name>
+      <selectedRelationships>failure</selectedRelationships>
+      <selectedRelationships>success</selectedRelationships>
+      <source>
+        <groupId>b0ef63d0-0158-1000-0000-000000000000</groupId>
+        <id>0159102c-a86d-199f-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </source>
+      <zIndex>0</zIndex>
+    </connections>
+    <controllerServices>
+      <id>e538b601-0158-1000-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <comments></comments>
+      <descriptors>
+        <entry>
+          <key>Request Expiration</key>
+          <value>
+            <name>Request Expiration</name>
+          </value>
+        </entry>
+        <entry>
+          <key>Maximum Outstanding Requests</key>
+          <value>
+            <name>Maximum Outstanding Requests</name>
+          </value>
+        </entry>
+      </descriptors>
+      <name>StandardHttpContextMap</name>
+      <properties>
+        <entry>
+          <key>Request Expiration</key>
+          <value>1 min</value>
+        </entry>
+        <entry>
+          <key>Maximum Outstanding Requests</key>
+          <value>5000</value>
+        </entry>
+      </properties>
+      <state>ENABLED</state>
+      <type>org.apache.nifi.http.StandardHttpContextMap</type>
+    </controllerServices>
+    <controllerServices>
+      <id>01591011-a86d-199f-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <comments></comments>
+      <descriptors>
+        <entry>
+          <key>Request Expiration</key>
+          <value>
+            <name>Request Expiration</name>
+          </value>
+        </entry>
+        <entry>
+          <key>Maximum Outstanding Requests</key>
+          <value>
+            <name>Maximum Outstanding Requests</name>
+          </value>
+        </entry>
+      </descriptors>
+      <name>StandardHttpContextMap5</name>
+      <properties>
+        <entry>
+          <key>Request Expiration</key>
+          <value>1 min</value>
+        </entry>
+        <entry>
+          <key>Maximum Outstanding Requests</key>
+          <value>5000</value>
+        </entry>
+      </properties>
+      <state>ENABLED</state>
+      <type>org.apache.nifi.http.StandardHttpContextMap</type>
+    </controllerServices>
+    <outputPorts>
+      <id>6b8aecd9-0159-1000-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <position>
+        <x>1643.4344872182082</x>
+        <y>612.2451525753281</y>
+      </position>
+      <comments></comments>
+      <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+      <name>dice2out</name>
+      <state>STOPPED</state>
+      <type>OUTPUT_PORT</type>
+    </outputPorts>
+    <processors>
+      <id>0159102a-a86d-199f-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <position>
+        <x>0.0</x>
+        <y>559.5545654296875</y>
+      </position>
+      <config>
+        <bulletinLevel>WARN</bulletinLevel>
+        <comments></comments>
+        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+        <descriptors>
+          <entry>
+            <key>Allow POST</key>
+            <value>
+              <name>Allow POST</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Hostname</key>
+            <value>
+              <name>Hostname</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Default URL Character Set</key>
+            <value>
+              <name>Default URL Character Set</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Allow DELETE</key>
+            <value>
+              <name>Allow DELETE</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Additional HTTP Methods</key>
+            <value>
+              <name>Additional HTTP Methods</name>
+            </value>
+          </entry>
+          <entry>
+            <key>container-queue-size</key>
+            <value>
+              <name>container-queue-size</name>
+            </value>
+          </entry>
+          <entry>
+            <key>HTTP Context Map</key>
+            <value>
+              <identifiesControllerService>org.apache.nifi.http.HttpContextMap</identifiesControllerService>
+              <name>HTTP Context Map</name>
+            </value>
+          </entry>
+          <entry>
+            <key>SSL Context Service</key>
+            <value>
+              <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+              <name>SSL Context Service</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Allow OPTIONS</key>
+            <value>
+              <name>Allow OPTIONS</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Allowed Paths</key>
+            <value>
+              <name>Allowed Paths</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Allow GET</key>
+            <value>
+              <name>Allow GET</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Allow HEAD</key>
+            <value>
+              <name>Allow HEAD</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Listening Port</key>
+            <value>
+              <name>Listening Port</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Client Authentication</key>
+            <value>
+              <name>Client Authentication</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Allow PUT</key>
+            <value>
+              <name>Allow PUT</name>
+            </value>
+          </entry>
+        </descriptors>
+        <lossTolerant>false</lossTolerant>
+        <penaltyDuration>30 sec</penaltyDuration>
+        <properties>
+          <entry>
+            <key>Allow POST</key>
+            <value>false</value>
+          </entry>
+          <entry>
+            <key>Hostname</key>
+          </entry>
+          <entry>
+            <key>Default URL Character Set</key>
+            <value>UTF-8</value>
+          </entry>
+          <entry>
+            <key>Allow DELETE</key>
+            <value>false</value>
+          </entry>
+          <entry>
+            <key>Additional HTTP Methods</key>
+          </entry>
+          <entry>
+            <key>container-queue-size</key>
+            <value>50</value>
+          </entry>
+          <entry>
+            <key>HTTP Context Map</key>
+            <value>01591011-a86d-199f-0000-000000000000</value>
+          </entry>
+          <entry>
+            <key>SSL Context Service</key>
+          </entry>
+          <entry>
+            <key>Allow OPTIONS</key>
+            <value>true</value>
+          </entry>
+          <entry>
+            <key>Allowed Paths</key>
+          </entry>
+          <entry>
+            <key>Allow GET</key>
+            <value>true</value>
+          </entry>
+          <entry>
+            <key>Allow HEAD</key>
+            <value>false</value>
+          </entry>
+          <entry>
+            <key>Listening Port</key>
+            <value>9099</value>
+          </entry>
+          <entry>
+            <key>Client Authentication</key>
+            <value>No Authentication</value>
+          </entry>
+          <entry>
+            <key>Allow PUT</key>
+            <value>false</value>
+          </entry>
+        </properties>
+        <runDurationMillis>0</runDurationMillis>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <yieldDuration>1 sec</yieldDuration>
+      </config>
+      <name>HandleHttpRequest</name>
+      <relationships>
+        <autoTerminate>false</autoTerminate>
+        <name>success</name>
+      </relationships>
+      <style></style>
+      <type>org.apache.nifi.processors.standard.HandleHttpRequest</type>
+    </processors>
+    <processors>
+      <id>0159102b-a86d-199f-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <position>
+        <x>767.2518920898438</x>
+        <y>609.3547058105469</y>
+      </position>
+      <config>
+        <bulletinLevel>WARN</bulletinLevel>
+        <comments></comments>
+        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+        <descriptors>
+          <entry>
+            <key>Max Attribute Length</key>
+            <value>
+              <name>Max Attribute Length</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Command Path</key>
+            <value>
+              <name>Command Path</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Working Directory</key>
+            <value>
+              <name>Working Directory</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Output Destination Attribute</key>
+            <value>
+              <name>Output Destination Attribute</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Argument Delimiter</key>
+            <value>
+              <name>Argument Delimiter</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Ignore STDIN</key>
+            <value>
+              <name>Ignore STDIN</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Command Arguments</key>
+            <value>
+              <name>Command Arguments</name>
+            </value>
+          </entry>
+        </descriptors>
+        <lossTolerant>false</lossTolerant>
+        <penaltyDuration>30 sec</penaltyDuration>
+        <properties>
+          <entry>
+            <key>Max Attribute Length</key>
+            <value>256</value>
+          </entry>
+          <entry>
+            <key>Command Path</key>
+            <value>bash</value>
+          </entry>
+          <entry>
+            <key>Working Directory</key>
+            <value>/Users/eorgad/testnifi</value>
+          </entry>
+          <entry>
+            <key>Output Destination Attribute</key>
+          </entry>
+          <entry>
+            <key>Argument Delimiter</key>
+            <value>;</value>
+          </entry>
+          <entry>
+            <key>Ignore STDIN</key>
+            <value>true</value>
+          </entry>
+          <entry>
+            <key>Command Arguments</key>
+            <value>/Users/eorgad/testnifi/dice2.sh;</value>
+          </entry>
+        </properties>
+        <runDurationMillis>0</runDurationMillis>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <yieldDuration>1 sec</yieldDuration>
+      </config>
+      <name>ExecuteStreamCommand</name>
+      <relationships>
+        <autoTerminate>true</autoTerminate>
+        <name>original</name>
+      </relationships>
+      <relationships>
+        <autoTerminate>false</autoTerminate>
+        <name>output stream</name>
+      </relationships>
+      <style></style>
+      <type>org.apache.nifi.processors.standard.ExecuteStreamCommand</type>
+    </processors>
+    <processors>
+      <id>0159102c-a86d-199f-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <position>
+        <x>1148.2518920898438</x>
+        <y>900.3546752929688</y>
+      </position>
+      <config>
+        <bulletinLevel>WARN</bulletinLevel>
+        <comments></comments>
+        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+        <descriptors>
+          <entry>
+            <key>HTTP Context Map</key>
+            <value>
+              <identifiesControllerService>org.apache.nifi.http.HttpContextMap</identifiesControllerService>
+              <name>HTTP Context Map</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Access-Control-Allow-Origin</key>
+            <value>
+              <name>Access-Control-Allow-Origin</name>
+            </value>
+          </entry>
+          <entry>
+            <key>HTTP Status Code</key>
+            <value>
+              <name>HTTP Status Code</name>
+            </value>
+          </entry>
+        </descriptors>
+        <lossTolerant>false</lossTolerant>
+        <penaltyDuration>30 sec</penaltyDuration>
+        <properties>
+          <entry>
+            <key>HTTP Context Map</key>
+            <value>01591011-a86d-199f-0000-000000000000</value>
+          </entry>
+          <entry>
+            <key>Access-Control-Allow-Origin</key>
+            <value>*</value>
+          </entry>
+          <entry>
+            <key>HTTP Status Code</key>
+            <value>404</value>
+          </entry>
+        </properties>
+        <runDurationMillis>0</runDurationMillis>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <yieldDuration>1 sec</yieldDuration>
+      </config>
+      <name>HandleHttpResponse</name>
+      <relationships>
+        <autoTerminate>false</autoTerminate>
+        <name>failure</name>
+      </relationships>
+      <relationships>
+        <autoTerminate>false</autoTerminate>
+        <name>success</name>
+      </relationships>
+      <style></style>
+      <type>org.apache.nifi.processors.standard.HandleHttpResponse</type>
+    </processors>
+    <processors>
+      <id>0159102d-a86d-199f-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <position>
+        <x>373.88055419921875</x>
+        <y>905.2686157226562</y>
+      </position>
+      <config>
+        <bulletinLevel>WARN</bulletinLevel>
+        <comments></comments>
+        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+        <descriptors>
+          <entry>
+            <key>Routing Strategy</key>
+            <value>
+              <name>Routing Strategy</name>
+            </value>
+          </entry>
+          <entry>
+            <key>five_record</key>
+            <value>
+              <name>five_record</name>
+            </value>
+          </entry>
+          <entry>
+            <key>advanced_fraud</key>
+            <value>
+              <name>advanced_fraud</name>
+            </value>
+          </entry>
+        </descriptors>
+        <lossTolerant>false</lossTolerant>
+        <penaltyDuration>30 sec</penaltyDuration>
+        <properties>
+          <entry>
+            <key>Routing Strategy</key>
+            <value>Route to Property name</value>
+          </entry>
+          <entry>
+            <key>five_record</key>
+            <value>${http.request.uri:contains("five")}</value>
+          </entry>
+          <entry>
+            <key>advanced_fraud</key>
+            <value>${http.request.uri:contains("ledger")}</value>
+          </entry>
+        </properties>
+        <runDurationMillis>0</runDurationMillis>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <yieldDuration>1 sec</yieldDuration>
+      </config>
+      <name>RouteOnAttribute</name>
+      <relationships>
+        <autoTerminate>false</autoTerminate>
+        <name>advanced_fraud</name>
+      </relationships>
+      <relationships>
+        <autoTerminate>false</autoTerminate>
+        <name>five_record</name>
+      </relationships>
+      <relationships>
+        <autoTerminate>false</autoTerminate>
+        <name>unmatched</name>
+      </relationships>
+      <style></style>
+      <type>org.apache.nifi.processors.standard.RouteOnAttribute</type>
+    </processors>
+    <processors>
+      <id>099fa86a-0159-1000-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <position>
+        <x>25.3458251953125</x>
+        <y>0.0</y>
+      </position>
+      <config>
+        <bulletinLevel>WARN</bulletinLevel>
+        <comments></comments>
+        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+        <descriptors>
+          <entry>
+            <key>Allow POST</key>
+            <value>
+              <name>Allow POST</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Hostname</key>
+            <value>
+              <name>Hostname</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Default URL Character Set</key>
+            <value>
+              <name>Default URL Character Set</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Allow DELETE</key>
+            <value>
+              <name>Allow DELETE</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Additional HTTP Methods</key>
+            <value>
+              <name>Additional HTTP Methods</name>
+            </value>
+          </entry>
+          <entry>
+            <key>container-queue-size</key>
+            <value>
+              <name>container-queue-size</name>
+            </value>
+          </entry>
+          <entry>
+            <key>HTTP Context Map</key>
+            <value>
+              <identifiesControllerService>org.apache.nifi.http.HttpContextMap</identifiesControllerService>
+              <name>HTTP Context Map</name>
+            </value>
+          </entry>
+          <entry>
+            <key>SSL Context Service</key>
+            <value>
+              <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+              <name>SSL Context Service</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Allow OPTIONS</key>
+            <value>
+              <name>Allow OPTIONS</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Allowed Paths</key>
+            <value>
+              <name>Allowed Paths</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Allow GET</key>
+            <value>
+              <name>Allow GET</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Allow HEAD</key>
+            <value>
+              <name>Allow HEAD</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Listening Port</key>
+            <value>
+              <name>Listening Port</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Client Authentication</key>
+            <value>
+              <name>Client Authentication</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Allow PUT</key>
+            <value>
+              <name>Allow PUT</name>
+            </value>
+          </entry>
+        </descriptors>
+        <lossTolerant>false</lossTolerant>
+        <penaltyDuration>30 sec</penaltyDuration>
+        <properties>
+          <entry>
+            <key>Allow POST</key>
+            <value>false</value>
+          </entry>
+          <entry>
+            <key>Hostname</key>
+          </entry>
+          <entry>
+            <key>Default URL Character Set</key>
+            <value>UTF-8</value>
+          </entry>
+          <entry>
+            <key>Allow DELETE</key>
+            <value>false</value>
+          </entry>
+          <entry>
+            <key>Additional HTTP Methods</key>
+          </entry>
+          <entry>
+            <key>container-queue-size</key>
+            <value>50</value>
+          </entry>
+          <entry>
+            <key>HTTP Context Map</key>
+            <value>e538b601-0158-1000-0000-000000000000</value>
+          </entry>
+          <entry>
+            <key>SSL Context Service</key>
+          </entry>
+          <entry>
+            <key>Allow OPTIONS</key>
+            <value>true</value>
+          </entry>
+          <entry>
+            <key>Allowed Paths</key>
+          </entry>
+          <entry>
+            <key>Allow GET</key>
+            <value>true</value>
+          </entry>
+          <entry>
+            <key>Allow HEAD</key>
+            <value>false</value>
+          </entry>
+          <entry>
+            <key>Listening Port</key>
+            <value>9098</value>
+          </entry>
+          <entry>
+            <key>Client Authentication</key>
+            <value>No Authentication</value>
+          </entry>
+          <entry>
+            <key>Allow PUT</key>
+            <value>false</value>
+          </entry>
+        </properties>
+        <runDurationMillis>0</runDurationMillis>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <yieldDuration>1 sec</yieldDuration>
+      </config>
+      <name>HandleHttpRequest</name>
+      <relationships>
+        <autoTerminate>false</autoTerminate>
+        <name>success</name>
+      </relationships>
+      <style></style>
+      <type>org.apache.nifi.processors.standard.HandleHttpRequest</type>
+    </processors>
+    <processors>
+      <id>099fa86b-0159-1000-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <position>
+        <x>792.5977172851562</x>
+        <y>49.800140380859375</y>
+      </position>
+      <config>
+        <bulletinLevel>WARN</bulletinLevel>
+        <comments></comments>
+        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+        <descriptors>
+          <entry>
+            <key>Max Attribute Length</key>
+            <value>
+              <name>Max Attribute Length</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Command Path</key>
+            <value>
+              <name>Command Path</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Working Directory</key>
+            <value>
+              <name>Working Directory</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Output Destination Attribute</key>
+            <value>
+              <name>Output Destination Attribute</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Argument Delimiter</key>
+            <value>
+              <name>Argument Delimiter</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Ignore STDIN</key>
+            <value>
+              <name>Ignore STDIN</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Command Arguments</key>
+            <value>
+              <name>Command Arguments</name>
+            </value>
+          </entry>
+        </descriptors>
+        <lossTolerant>false</lossTolerant>
+        <penaltyDuration>30 sec</penaltyDuration>
+        <properties>
+          <entry>
+            <key>Max Attribute Length</key>
+            <value>256</value>
+          </entry>
+          <entry>
+            <key>Command Path</key>
+            <value>bash</value>
+          </entry>
+          <entry>
+            <key>Working Directory</key>
+            <value>/Users/eorgad/testnifi</value>
+          </entry>
+          <entry>
+            <key>Output Destination Attribute</key>
+          </entry>
+          <entry>
+            <key>Argument Delimiter</key>
+            <value>;</value>
+          </entry>
+          <entry>
+            <key>Ignore STDIN</key>
+            <value>true</value>
+          </entry>
+          <entry>
+            <key>Command Arguments</key>
+            <value>/Users/eorgad/testnifi/dice.sh;</value>
+          </entry>
+        </properties>
+        <runDurationMillis>0</runDurationMillis>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <yieldDuration>1 sec</yieldDuration>
+      </config>
+      <name>ExecuteStreamCommand</name>
+      <relationships>
+        <autoTerminate>true</autoTerminate>
+        <name>original</name>
+      </relationships>
+      <relationships>
+        <autoTerminate>false</autoTerminate>
+        <name>output stream</name>
+      </relationships>
+      <style></style>
+      <type>org.apache.nifi.processors.standard.ExecuteStreamCommand</type>
+    </processors>
+    <processors>
+      <id>099fa86c-0159-1000-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <position>
+        <x>1173.5977172851562</x>
+        <y>340.80010986328125</y>
+      </position>
+      <config>
+        <bulletinLevel>WARN</bulletinLevel>
+        <comments></comments>
+        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+        <descriptors>
+          <entry>
+            <key>HTTP Context Map</key>
+            <value>
+              <identifiesControllerService>org.apache.nifi.http.HttpContextMap</identifiesControllerService>
+              <name>HTTP Context Map</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Access-Control-Allow-Origin</key>
+            <value>
+              <name>Access-Control-Allow-Origin</name>
+            </value>
+          </entry>
+          <entry>
+            <key>HTTP Status Code</key>
+            <value>
+              <name>HTTP Status Code</name>
+            </value>
+          </entry>
+        </descriptors>
+        <lossTolerant>false</lossTolerant>
+        <penaltyDuration>30 sec</penaltyDuration>
+        <properties>
+          <entry>
+            <key>HTTP Context Map</key>
+            <value>e538b601-0158-1000-0000-000000000000</value>
+          </entry>
+          <entry>
+            <key>Access-Control-Allow-Origin</key>
+            <value>*</value>
+          </entry>
+          <entry>
+            <key>HTTP Status Code</key>
+            <value>404</value>
+          </entry>
+        </properties>
+        <runDurationMillis>0</runDurationMillis>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <yieldDuration>1 sec</yieldDuration>
+      </config>
+      <name>HandleHttpResponse</name>
+      <relationships>
+        <autoTerminate>true</autoTerminate>
+        <name>failure</name>
+      </relationships>
+      <relationships>
+        <autoTerminate>true</autoTerminate>
+        <name>success</name>
+      </relationships>
+      <style></style>
+      <type>org.apache.nifi.processors.standard.HandleHttpResponse</type>
+    </processors>
+    <processors>
+      <id>099fa86d-0159-1000-0000-000000000000</id>
+      <parentGroupId>b0ef63d0-0158-1000-0000-000000000000</parentGroupId>
+      <position>
+        <x>399.22637939453125</x>
+        <y>345.71405029296875</y>
+      </position>
+      <config>
+        <bulletinLevel>WARN</bulletinLevel>
+        <comments></comments>
+        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+        <descriptors>
+          <entry>
+            <key>Routing Strategy</key>
+            <value>
+              <name>Routing Strategy</name>
+            </value>
+          </entry>
+          <entry>
+            <key>five_record</key>
+            <value>
+              <name>five_record</name>
+            </value>
+          </entry>
+          <entry>
+            <key>advanced_fraud</key>
+            <value>
+              <name>advanced_fraud</name>
+            </value>
+          </entry>
+        </descriptors>
+        <lossTolerant>false</lossTolerant>
+        <penaltyDuration>30 sec</penaltyDuration>
+        <properties>
+          <entry>
+            <key>Routing Strategy</key>
+            <value>Route to Property name</value>
+          </entry>
+          <entry>
+            <key>five_record</key>
+            <value>${http.request.uri:contains("five")}</value>
+          </entry>
+          <entry>
+            <key>advanced_fraud</key>
+            <value>${http.request.uri:contains("ledger")}</value>
+          </entry>
+        </properties>
+        <runDurationMillis>0</runDurationMillis>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <yieldDuration>1 sec</yieldDuration>
+      </config>
+      <name>RouteOnAttribute</name>
+      <relationships>
+        <autoTerminate>false</autoTerminate>
+        <name>advanced_fraud</name>
+      </relationships>
+      <relationships>
+        <autoTerminate>false</autoTerminate>
+        <name>five_record</name>
+      </relationships>
+      <relationships>
+        <autoTerminate>true</autoTerminate>
+        <name>unmatched</name>
+      </relationships>
+      <style></style>
+      <type>org.apache.nifi.processors.standard.RouteOnAttribute</type>
+    </processors>
+  </snippet>
+  <timestamp>02/13/2017 14:50:30 EST</timestamp>
+</template>
