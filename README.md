@@ -37,4 +37,9 @@ The following is a Bell curve with reference to the UI/dice8.html
 </p>
 
 
+The Nifi UI is served from the following Nifi flow, this is what you should see after importing the xml template to the Nifi UI:
+<p align="center">
+  <img src="https://github.com/eorgad/Dice-nifi-streams-example/blob/master/dice-nifi-two-streams-example.png?raw=true" width="600"/>
+</p>
+
 
