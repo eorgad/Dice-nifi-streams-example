@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  
+  <script src="../Charts/Chart.min.js"></script>
+ <script src="//www.chartjs.org/assets/Chart.min.js"></script>
+</head>
+<body>
+  <title>Design Shop</title>
+  <h1 style="color:green;">Hortnworks Nifi streams example </h1>
+  
+  <p>Line chart showing two dice sum randon normal distribution plot.</p>
+  <canvas id="updating-chart" width="500" height="300"></canvas>
+ <div class="table1" id="sidebar">
+            <div class="row" style="max-height: 400px !important;">
+                <table  style="float: left;" class="table table-hover table-condensed table-responsive" id="table-data">
+                
+                  <tr>
+                    <th>Stream1 </th>
+                    <th>Dice1</th>
+                    <th dice2>Dice2</th>
+                    <th>Total</th>
+                    <td style="padding:0 15px 0 15px;"></td>
+                  </tr>
+                
+             <table  class="table table-hover table-condensed table-responsive" id="table-data2">
+               	
+                  <tr>
+                    <th>Stream2 </th>
+                    <th>Dice1</th>
+                    <th dice2>Dice2</th>
+                    <th>Total</th>
+                  </tr>
+                </table>
+            	</table>
+           </div> 
+         </div> 
+          
+         
+          
+      <p>Bar chart showing two dice randon sequence.</p>    
+     <canvas id="updating-chart2" width="800" height="300"></canvas>      
+</body>
+</html>
+<script>
+var canvas = document.getElementById('updating-chart'),
+    ctx = canvas.getContext('2d'),
+    startingData = {
+      labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      datasets: [
+          {
+              fillColor: "rgba(220,220,220,0.2)",
+              strokeColor: "rgba(220,220,220,1)",
+              pointColor: "rgba(220,220,220,1)",
+              pointStrokeColor: "#fff",
+              data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+              fillColor: "rgba(151,187,205,0.2)",
+              strokeColor: "rgba(151,187,205,1)",
+              pointColor: "rgba(151,187,205,1)",
+              pointStrokeColor: "#fff",
+             data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          }
+      ]
+    },
+    latestLabel = startingData.labels[0];
+
+// Reduce the animation steps for demo clarity.
+var myLiveChart = new Chart(ctx).Line(startingData, {animationSteps: 1});
+var tmpnum;
+var tmpnum2;
+var total;
+var gdice1;
+var gdice2;
+var totalSecondstream;
+var myArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; 
+var myArray2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; 
+
+function addThrow () {
+   for (i = 0; i < 12; i++) {
+   
+   	tmpnum = parseInt(Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1) );
+   //	console.log(tmpnum);
+   	 myArray[tmpnum-1] =  myArray[tmpnum-1] + 1 ;
+   	 //console.log(myArray[tmpnum]);
+   }
+}
+
+setInterval(function(){
+  // Add two random numbers for each dataset
+  poll();
+  poll2();
+  poll3();
+  
+  
+  for (i = 0; i < 12; i++) {
+   
+  tmpnum1 = Math.floor((Math.random() * 6) + 1); 
+   tmpnum2 = Math.floor((Math.random() * 6) + 1) + tmpnum1; 
+   
+    myLiveChart.removeData();
+    //myLiveChart.addData([myArray[i] , tmpnum2], i+1);
+    myLiveChart.addData([myArray[i] , myArray2[i]], i+1);
+    
+    
+  }
+  
+  
+   myLiveChart2.removeData();
+   myLiveChart2.addData([gdice1 , gdice2, totalSecondstream], latestLabel++);
+  
+ 
+}, 1000);
+
+
+ function setInterval2() {
+  // Add two random numbers for each dataset
+  myLiveChart2.addData3([Math.random() * 100, Math.random() * 100], ++latestLabel);
+  // Remove the first point so we dont just add values forever
+  myLiveChart2.removeData();
+};
+
+
+function poll() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+               addDice(xhr.responseText);
+            }
+        }
+        //xhr.open('GET', 'http://172.24.2.242:9095/ledger');
+         xhr.open('GET', 'http://127.0.0.1:9098/five');
+        // FIXME:
+        //xhr.setRequestHeader("amount", document.getElementById('numRecords').value);
+        xhr.send();
+      }
+      
+      
+  function addDice(data) {
+
+        var t = document.getElementById('table-data');
+     
+        var strings = data.split('\n');
+        var entries = strings[0].split(',');
+        
+        addThrowFromNifi(entries[1], entries[2]);
+        
+        // just this one line please 
+        for (var i=0; i<strings.length-1; i++) {
+         
+      //    console.log(strings[i]);
+		  
+		  var r = t.insertRow(-1);
+          var c0 = r.insertCell(0);
+          var c1 = r.insertCell(1);
+          var c2 = r.insertCell(2);
+          var c3 = r.insertCell(3);
+     
+		  c0.innerHTML = entries[0];
+		  c1.innerHTML = entries[1];
+		  c2.innerHTML = entries[2];
+		  c3.innerHTML = entries[3];
+	
+		
+          if (t.rows.length > 10)
+            t.deleteRow(1);
+        }
+  }
+
+function poll2() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+           			
+               addDice2(xhr.responseText);
+               
+            }
+        }
+        //xhr.open('GET', 'http://172.24.2.242:9095/ledger');
+         xhr.open('GET', 'http://127.0.0.1:9099/five');
+        // FIXME:
+        //xhr.setRequestHeader("amount", document.getElementById('numRecords').value);
+        xhr.send();
+      }
+     
+     function poll3() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+            	addDice3(xhr.responseText);
+               
+            }
+        }
+        //xhr.open('GET', 'http://172.24.2.242:9095/ledger');
+         xhr.open('GET', 'http://127.0.0.1:9099/five');
+        // FIXME:
+        //xhr.setRequestHeader("amount", document.getElementById('numRecords').value);
+        xhr.send();
+      } 
+      
+   function addDice2(data) {
+
+        var t = document.getElementById('table-data');
+     
+        var strings = data.split('\n');
+        var entries = strings[0].split(',');
+        
+        addThrow2FromNifi2(entries[1], entries[2]);
+        
+       
+      }
+      
+      function addDice3(data) {
+
+        var t = document.getElementById('table-data2');
+     
+        var strings = data.split('\n');
+        var entries = strings[0].split(',');
+        
+        addThrow3FromNifi3(entries[1], entries[2]);
+        
+        for (var i=0; i<strings.length-1; i++) {
+         
+      //    console.log(strings[i]);
+		  
+		  var r = t.insertRow(-1);
+          var c0 = r.insertCell(0);
+          var c1 = r.insertCell(1);
+          var c2 = r.insertCell(2);
+          var c3 = r.insertCell(3);
+     
+		  c0.innerHTML = entries[0];
+		  c1.innerHTML = entries[1];
+		  c2.innerHTML = entries[2];
+		  c3.innerHTML = entries[3];
+	
+		
+          if (t.rows.length > 10)
+            t.deleteRow(1);
+        }
+       
+      }
+      
+function addThrow3FromNifi3 (dice1, dice2) {
+   	tmpnum = parseInt(dice1) + parseInt(dice2);
+   			console.log(tmpnum);
+   	 myArray3[tmpnum-1] =  myArray3[tmpnum-1] + 1 ;
+   	 total=myArray3[tmpnum-1] + 1 ;
+   	 gdice1=dice1;
+   	 gdice2=dice2;
+   	 totalSecondstream=tmpnum;
+   	 	//console.log(myArray[tmpnum]);
+}
+      
+function addThrowFromNifi (dice1, dice2) {
+   //for (i = 0; i < 12; i++) {
+   
+   	tmpnum = parseInt(dice1) + parseInt(dice2);
+   //	console.log(tmpnum);
+   	 myArray[tmpnum-1] =  myArray[tmpnum-1] + 1 ;
+   	 //console.log(myArray[tmpnum]);
+   //}
+}
+
+function addThrow2FromNifi2 (dice1, dice2) {
+   	tmpnum = parseInt(dice1) + parseInt(dice2);
+   		//	console.log(tmpnum);
+   	 myArray2[tmpnum-1] =  myArray2[tmpnum-1] + 1 ;
+   	 myArray4[tmpnum-1] =  myArray4[tmpnum-1] + 1 ;
+   	 	//console.log(myArray[tmpnum]);
+}
+
+var canvas2 = document.getElementById('updating-chart2'),
+    ctx2 = canvas2.getContext('2d'),
+    startingData2 = {
+      labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      datasets: [
+          {
+              fillColor: "rgba(220,220,220,0.2)",
+              strokeColor: "rgba(220,220,220,1)",
+              pointColor: "rgba(220,220,220,1)",
+              pointStrokeColor: "#fff",
+              data: [6, 10, 7, 9, 11, 3, 4, 8, 8, 2, 5, 7]
+          },
+          {
+              fillColor: "rgba(151,187,205,0.2)",
+              strokeColor: "rgba(151,187,205,1)",
+              pointColor: "rgba(151,187,205,1)",
+              pointStrokeColor: "#fff",
+             data: [8, 7, 9, 7, 6, 2, 4, 11, 8, 9, 5, 5]
+          },
+          {
+              fillColor: "rgba(101,107,205,0.2)",
+              strokeColor: "rgba(151,187,205,1)",
+              pointColor: "rgba(151,187,205,1)",
+              pointStrokeColor: "#fff",
+             data: [8, 7, 9, 7, 6, 2, 4, 11, 8, 9, 5, 5]
+          }
+      ]
+    },
+    latestLabel = startingData2.labels[0];
+var myLiveChart2 = new Chart(ctx2).Bar(startingData2, {animationSteps: 1});
+//var tmpnum;
+//var tmpnum2;
+//var total;
+var myArray3 = [6, 10, 7, 9, 11, 3, 4, 8, 8, 2, 5, 7]; 
+var myArray4 = [8, 7, 9, 7, 6, 2, 4, 11, 8, 9, 5, 5]; 
+var myArray5 = [8, 7, 9, 7, 6, 2, 4, 11, 8, 9, 5, 5]; 
+
+
+
+      
+</script>
+
