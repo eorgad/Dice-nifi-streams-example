@@ -24,5 +24,7 @@ sudo service httpd start
 
 3.You can import the java project into eclipse or run the TwoCrapsTest from the cli to generate two files that Nifi would stream to your web instance. In the template there is a port that you can use to stream the feed via site-to-site to another Nifi instance, such as instance running on the edge node of your HDP instance (used HDP 2.5 sandbox VM for this example)
 
+The following is the result of launching your index.html with the two streams displayed in real time as they arrive:
+
 
 
