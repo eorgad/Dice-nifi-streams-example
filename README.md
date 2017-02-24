@@ -26,5 +26,15 @@ sudo service httpd start
 
 The following is the result of launching your index.html with the two streams displayed in real time as they arrive:
 
+<p align="center">
+  <img src="https://github.com/eorgad/Dice-nifi-streams-example/blob/master/Dice-stream-craps-simulation.gif?raw=true" width="600"/>
+</p>
+
+The following is a Bell curve with reference to the UI/dice8.html
+
+<p align="center">
+  <img src="https://github.com/eorgad/Dice-nifi-streams-example/blob/master/Dice-stream-bell-curve.gif?raw=true" width="600"/>
+</p>
+
 
 
